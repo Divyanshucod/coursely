@@ -7,7 +7,7 @@ type Props = PropsWithChildren<{
 
 const NavItem = ({endPoint,children}: Props) => {
   return (
-    <li className='p-2 text-xl'>
+    <li className='p-2 text-base'>
       <Link href={endPoint}>{children}</Link>
     </li>
   )
