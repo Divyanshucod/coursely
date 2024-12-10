@@ -2,10 +2,6 @@ import React, { PropsWithChildren } from "react";
 import ListItem from "./ListItem";
 import ClickAbleIcon from "./ClickAbleIcon";
 import CourseCard from "./CourseCard";
-import Image from "next/image";
-import PricingCard from "../SubscriptionSection/PricingCard";
-import Testimonial from "../testimonialSection/Testimonial";
-import Footer from "../footer/Footer";
 
 type Props = PropsWithChildren<{}>;
 const IconsArray = [
@@ -53,55 +49,6 @@ function DisplayCourses({}: Props) {
         <CourseCard teacher="Divyanshu" rating={12} pricing={123}>
           Some Things
         </CourseCard>
-      </div>
-      <div className="w-full">
-        <h2 className="text-center text-gray-700">
-          Trusted by over 16,000 companies and millions of learners around the
-          world
-        </h2>
-        <div className="w-full flex justify-between">
-          <Image
-            src="volkswagen_logo.svg"
-            alt="volkswagen_logo"
-            height="50"
-            width="50"
-          />
-          <Image src="cisco_logo.svg" alt="cisco_logo" height="50" width="50" />
-          <Image src="citi_logo.svg" alt="citi_logo" height="50" width="50" />
-          <Image
-            src="ericsson_logo.svg"
-            alt="ericsson_logo"
-            height="50"
-            width="50"
-          />
-          <Image
-            src="samsung_logo.svg"
-            alt="samsung_logo"
-            height="50"
-            width="50"
-          />
-          <Image src="vimeo_logo.svg" alt="vimeo_logo" height="50" width="50" />
-          <Image
-            src="procter_gamble_logo.svg"
-            alt="procter_gamble_logo"
-            height="50"
-            width="50"
-          />
-        </div>
-      </div>
-      <div className="w-full flex justify-between">
-        <PricingCard />
-      </div>
-      <div className="mt-10 w-full">
-        <h2 className="text-4xl text-left font-semibold">
-          See what others are achieving through learning
-        </h2>
-        <div className="flex justify-between mt-5">
-          <Testimonial />
-        </div>
-      </div>
-      <div>
-        <Footer/>
       </div>
     </div>
   );
