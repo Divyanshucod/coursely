@@ -11,7 +11,7 @@ type Props = PropsWithChildren<{}>;
 
 const NavBar = (props: Props) => {
   return (
-    <div className="w-screen h-20 p-2 flex items-center bg-zinc-100 shadow-lg shadow-md shadow-sm">
+    <div className="w-full h-20 p-2 flex items-center bg-zinc-100 shadow-lg shadow-md shadow-sm">
       <div className="w-full flex justify-between items-center">
         <Link href="/" className="w-40">
           {" "}
@@ -26,7 +26,7 @@ const NavBar = (props: Props) => {
         <SearchBar />
         <ul className="flex justify-between items-center gap-4">
           <NavItem endPoint="/pricing">Plan & Price</NavItem>
-          <NavItem endPoint="/teach">Teach on coursely</NavItem>
+          <NavItem endPoint="/teaching">Teach on coursely</NavItem>
         </ul>
         <div className="flex items-center gap-6">
           <ColorfulBorder>
