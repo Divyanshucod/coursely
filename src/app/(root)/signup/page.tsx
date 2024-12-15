@@ -1,16 +1,32 @@
-// components/SignIn.tsx
-"use client"
-import React, { useState } from "react";
+'use client'
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react'
 
-const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+type Props = {}
+
+function SignUp({}: Props) {
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+  const [username, setUsername] = React.useState<string>("");
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">Create Account</h2>
+    <div className="w-full h-full flex justify-between p-10 ">
+      <div className="w-[50%] h-[60%]">
+        <Image
+          src="/login-signin-support-image.webp"
+          alt="login-support-image"
+          height="500"
+          width="500"
+          className="h-full w-full"
+        />
+      </div>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 w-[50%]">
+        <div className="w-full max-w-md p-6 bg-white shadow-lg rounded-lg">
+          <h2 className="text-2xl font-extrabold text-center mb-6">
+          Sign up and start learning
+          </h2>
 
         {/* Sign Up Form */}
         <form>
@@ -59,41 +75,42 @@ const SignIn = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Create Account
-          </button>
+          <Button
+              type="submit"
+              variant="default"
+              className="w-full bg-sky-600"
+            >
+              Create Account
+            </Button>
         </form>
 
         <div className="my-4 text-center text-gray-600">or</div>
-
-        {/* Social Sign-Up Buttons */}
-        <button
-          onClick={() => {}}
-          className="w-full py-3 mb-4 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
-        >
-          Sign up with Google
-        </button>
-
-        <button
-          onClick={() => {}}
-          className="w-full py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800"
-        >
-          Sign up with GitHub
-        </button>
-
+       
+        <div className="w-full flex flex-col gap-5">
+            <Button
+              variant="default"
+              className="w-full bg-gray-500 transparent flex gap-4 p-2"
+            >
+              <span>Sign in with google</span>
+              <Image
+                src="/google-remove.png"
+                alt="google_image"
+                height="50"
+                width="50"
+              />
+            </Button>
+          </div>
         {/* Link to Login */}
         <p className="mt-6 text-center text-sm text-gray-500">
           Already have an account?{" "}
-          <a href="/auth/login" className="text-blue-500 hover:underline">
+          <Link href="/login" className="text-blue-500 hover:underline">
             Sign in
-          </a>
+          </Link>
         </p>
       </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default SignIn;
+export default SignUp
