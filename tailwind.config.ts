@@ -16,6 +16,9 @@ export default {
 		animation: {
 			rotate: "rotate 10s linear infinite",
 		  },
+		  boxShadow: {
+			'all-sides': '3px 4px 10px rgba(0, 0, 0, 0.1)', // Define a custom shadow
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
