@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react";
-// import { MenuIcon } from "@heroicons/react/outline";
+
 
 export default function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`bg-gray-800 text-white ${isOpen ? 'w-64' : 'w-16'} h-screen transition-all absolute`}
+    <div className={`bg-gray-800 text-white ${isOpen ? 'w-64' : 'w-16'} h-full transition-all absolute`}
          onMouseEnter={() => setIsOpen(true)}
          onMouseLeave={() => setIsOpen(false)}>
       <div className="flex flex-col p-4 space-y-4">
