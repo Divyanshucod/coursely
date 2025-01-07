@@ -44,7 +44,7 @@ function AddCoursePage() {
         onDrop={handleDragAndDrop}
         onDragOver={(e) => e.preventDefault()}
       >
-        <p className="text-center text-gray-600">
+        <p className="text-center text-gray-600 mr-4">
           Drag and drop files here or{" "}
           <label
             className="text-teal-500 underline cursor-pointer hover:text-teal-700"
