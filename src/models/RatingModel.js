@@ -3,13 +3,14 @@ import mongoose from "mongoose";
 const RatingSchema = new mongoose.Schema({
     courseId:{ type: mongoose.Schema.Types.ObjectId, ref: 'courses', required: true },
     reviews:[{type:String}],
-    ratings:[{
+    ratings:{
         fours:{type:Number},
         fives:{type:Number},
         ones:{type:Number},
         twos:{type:Number},
         zeros:{type:Number},
-    }]
+        threes:{type:Number}
+    }
 })
 
 
