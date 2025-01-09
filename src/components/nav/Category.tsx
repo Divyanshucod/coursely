@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react'
+import React, { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -6,14 +6,16 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
 
-type Props = PropsWithChildren<{}>
+const Category = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
-const Category = (props: Props) => {
   return (
-    <NavigationMenu>
+    <>
+      {/* Desktop Dropdown */}
+      <div className="hidden md:block">
+        <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Category</NavigationMenuTrigger>
@@ -27,7 +29,30 @@ const Category = (props: Props) => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-  )
-}
+      </div>
 
-export default Category
+      {/* Mobile Dropdown */}
+      <div className="md:hidden">
+        <button
+          className="text-gray-700"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          Category
+        </button>
+        {isMobile && (
+          <div className="absolute bg-white border rounded shadow-md">
+            <ul className="p-2">
+              <li className="p-2 hover:bg-gray-100">Machine Learning</li>
+              <li className="p-2 hover:bg-gray-100">Game Development</li>
+              <li className="p-2 hover:bg-gray-100">Software Development</li>
+              <li className="p-2 hover:bg-gray-100">DSA Courses</li>
+              <li className="p-2 hover:bg-gray-100">Full Stack Development</li>
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
+export default Category;
